@@ -1,5 +1,6 @@
 'use strict';
 
+const lessTheme = require('./lessThemeColor');
 const fs = require('fs');
 const isWsl = require('is-wsl');
 const path = require('path');
@@ -70,6 +71,8 @@ module.exports = function(webpackEnv) {
   // Get environment variables to inject into our app.
   const env = getClientEnvironment(publicUrl);
 
+
+
   // common function to get style loaders
   const getStyleLoaders = (cssOptions, preProcessor) => {
     const loaders = [
@@ -112,11 +115,16 @@ module.exports = function(webpackEnv) {
       },
     ].filter(Boolean);
     if (preProcessor) {
+      let options =  {
+        sourceMap: isEnvProduction && shouldUseSourceMap,
+      };
+      if (preProcessor === 'less-loader') {
+        options.modifyVars = lessTheme;
+        options.javascriptEnabled = true;
+      }
       loaders.push({
         loader: require.resolve(preProcessor),
-        options: {
-          sourceMap: isEnvProduction && shouldUseSourceMap,
-        },
+        options: options,
       });
     }
     return loaders;
@@ -471,7 +479,7 @@ module.exports = function(webpackEnv) {
               exclude: lessModuleRegex,
               use: getStyleLoaders(
                 {
-                  importLoaders: 2,
+                  importLoaders: 2
                 },
                 'less-loader'
               ),
@@ -483,7 +491,7 @@ module.exports = function(webpackEnv) {
                 {
                   importLoaders: 2,
                   modules: true,
-                  getLocalIdent: getCSSModuleLocalIdent,
+                  getLocalIdent: getCSSModuleLocalIdent
                 },
                 'less-loader'
               ),
