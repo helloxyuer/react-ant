@@ -1,8 +1,9 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-import { Menu, Icon,Button } from 'antd';
+import {NavLink} from 'react-router-dom';
+import {Menu, Icon, Button} from 'antd';
 import './NavBar.less'
-const {SubMenu } = Menu;
+
+const {SubMenu} = Menu;
 
 class Index extends React.Component {
   state = {
@@ -16,6 +17,7 @@ class Index extends React.Component {
       collapsed: !this.state.collapsed,
     });
   }
+
   render() {
     return (
       <div className='navBarBox'>
@@ -27,20 +29,20 @@ class Index extends React.Component {
           inlineCollapsed={this.state.collapsed}
         >
           <Menu.Item key="1">
-            <Icon type="mail" />
+            <Icon type="mail"/>
             <span>
               <NavLink to="/login">login</NavLink>
             </span>
           </Menu.Item>
           <Menu.Item key="2">
-            <Icon type="calendar" />
+            <Icon type="calendar"/>
             <span>Navigation Two</span>
           </Menu.Item>
           <SubMenu
             key="sub1"
             title={
               <span>
-                <Icon type="appstore" />
+                <Icon type="appstore"/>
                 <span>Navigation Three</span>
               </span>
             }>
@@ -70,7 +72,7 @@ class Index extends React.Component {
           </SubMenu>
         </Menu>
         <Button type="primary" onClick={this.toggleCollapsed}>
-          <Icon type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'} />
+          <Icon type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}/>
         </Button>
       </div>
     );

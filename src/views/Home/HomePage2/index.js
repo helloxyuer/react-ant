@@ -1,8 +1,8 @@
 import React from 'react';
 
 class HomePage2 extends React.Component {
-  render (){
-    return(
+  render() {
+    return (
       <div>主页2222</div>
     )
   }

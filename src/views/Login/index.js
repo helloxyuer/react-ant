@@ -1,8 +1,8 @@
 import React from 'react';
 
 class Login extends React.Component {
-  render (){
-    return(
+  render() {
+    return (
       <div>登录页</div>
     )
   }

@@ -1,8 +1,7 @@
-
 import axios from "axios";
 import config from "../config"
 import Qs from 'qs';
-import { Message } from 'antd';
+import {Message} from 'antd';
 
 const axiosBack = {
   sucSend(head) {
