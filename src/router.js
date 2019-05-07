@@ -32,7 +32,7 @@ class router extends React.Component {
           }/>
           <Route path="/content" render={() =>
             <Content>
-              <Route path="/content/detail" component={Details}/>
+              <Route path="/content/detail/:id" component={Details}/>
               <Route component={NoMatch}/>
             </Content>
           }/>
