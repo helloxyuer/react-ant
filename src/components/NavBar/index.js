@@ -1,5 +1,6 @@
-import { Menu, Icon,Button } from 'antd';
 import React from 'react';
+import { NavLink } from 'react-router-dom';
+import { Menu, Icon,Button } from 'antd';
 import './NavBar.less'
 const {SubMenu } = Menu;
 
@@ -27,7 +28,9 @@ class Index extends React.Component {
         >
           <Menu.Item key="1">
             <Icon type="mail" />
-            <span>Navigation One</span>
+            <span>
+              <NavLink to="/login">login</NavLink>
+            </span>
           </Menu.Item>
           <Menu.Item key="2">
             <Icon type="calendar" />
