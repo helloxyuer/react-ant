@@ -23,16 +23,16 @@ class router extends React.Component {
           <Route path="/home" render={() =>
             <Home>
               <Switch>
-                <Route path='/homePage1' component={HomePage1}/>
-                <Route path='/homePage2' component={HomePage2}/>
-                <Route path='/homePage3' component={HomePage3}/>
+                <Route path='/home/homepage1' component={HomePage1}/>
+                <Route path='/home/homepage2' component={HomePage2}/>
+                <Route path='/home/homepage3' component={HomePage3}/>
                 <Route component={NoMatch}/>
               </Switch>
             </Home>
           }/>
           <Route path="/content" render={() =>
             <Content>
-              <Route path="/detail" component={Details}/>
+              <Route path="/content/detail" component={Details}/>
               <Route component={NoMatch}/>
             </Content>
           }/>
