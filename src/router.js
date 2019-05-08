@@ -36,7 +36,7 @@ class router extends React.Component {
               <Route component={NoMatch}/>
             </Content>
           }/>
-          <Redirect to="login"/>
+          <Redirect to="/login"/>
         </Switch>
       </HashRouter>
     );
