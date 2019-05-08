@@ -11,6 +11,8 @@ class Login extends React.Component {
       }
     });
     console.log( this.props.form.getFieldsValue())
+    console.log(this.props.history)
+    this.props.history.replace(`/home`)
   }
 
   render() {

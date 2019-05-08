@@ -26,7 +26,7 @@ class router extends React.Component {
                 <Route path='/home/homepage1' component={HomePage1}/>
                 <Route path='/home/homepage2' component={HomePage2}/>
                 <Route path='/home/homepage3' component={HomePage3}/>
-                <Route component={NoMatch}/>
+                <Redirect to='/home/homepage1' component={HomePage1}/>
               </Switch>
             </Home>
           }/>

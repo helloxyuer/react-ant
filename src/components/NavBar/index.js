@@ -28,47 +28,65 @@ class Index extends React.Component {
           theme={this.state.theme}
           inlineCollapsed={this.state.collapsed}
         >
-          <Menu.Item key="1">
+          <Menu.Item
+            key="sub1">
             <Icon type="mail"/>
             <span>
-              <NavLink to="/login">login</NavLink>
+              <NavLink to="/login">我的邮箱</NavLink>
             </span>
           </Menu.Item>
-          <Menu.Item key="2">
+          <Menu.Item
+            key="sub2">
             <Icon type="calendar"/>
-            <span>Navigation Two</span>
+            <span>
+              <NavLink to="/login">我的日历</NavLink>
+            </span>
           </Menu.Item>
           <SubMenu
-            key="sub1"
+            key="sub3"
             title={
               <span>
                 <Icon type="appstore"/>
-                <span>Navigation Three</span>
+                <NavLink to="/home">我的商店</NavLink>
               </span>
             }>
-            <Menu.Item key="3">Option 3</Menu.Item>
-            <Menu.Item key="4">Option 4</Menu.Item>
+            <Menu.Item key="sub3-1">
+              <NavLink to="/home/homepage1">我的订单</NavLink>
+            </Menu.Item>
+            <Menu.Item key="sub3-2">
+              <NavLink to="/home/homepage2">我的商品</NavLink>
+            </Menu.Item>
+            <Menu.Item key="sub3-3">
+              <NavLink to="/home/homepage3">我的账单</NavLink>
+            </Menu.Item>
             <SubMenu
-              key="sub1-2"
+              key="sub3-4"
               title={
-                <span>Navigation Four</span>
+                <span>商店消息</span>
               }>
-              <Menu.Item key="5">Option 5</Menu.Item>
-              <Menu.Item key="6">Option 6</Menu.Item>
+              <Menu.Item key="sub3-4-1">
+                <NavLink to="/home/homepage4">我的投诉</NavLink>
+              </Menu.Item>
+              <Menu.Item key="sub3-4-2">
+                <NavLink to="/home/homepage5">我的建议</NavLink>
+              </Menu.Item>
+              <Menu.Item key="sub3-4-3">
+                <NavLink to="/home/homepage6">我的评价</NavLink>
+              </Menu.Item>
             </SubMenu>
           </SubMenu>
           <SubMenu
-            key="sub2"
+            key="sub4"
             title={
               <span>
                 <Icon type="setting"/>
-                <span>Navigation Four</span>
+                <span>我的伙伴</span>
               </span>
             }>
-            <Menu.Item key="7">Option 7</Menu.Item>
-            <Menu.Item key="8">Option 8</Menu.Item>
-            <Menu.Item key="9">Option 9</Menu.Item>
-            <Menu.Item key="10">Option 10</Menu.Item>
+            <Menu.Item key="sub4-1">Option 7</Menu.Item>
+            <Menu.Item key="sub4-2">Option 8</Menu.Item>
+            <Menu.Item key="sub4-3">Option 9</Menu.Item>
+            <Menu.Item key="sub4-4">Option 10</Menu.Item>
           </SubMenu>
         </Menu>
         <Button type="primary" onClick={this.toggleCollapsed}>
