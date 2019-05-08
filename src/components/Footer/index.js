@@ -5,7 +5,7 @@ class Footer extends React.Component {
   render() {
     return (
       <div className="footerBox">
-        底部
+        Made with ❤ cby
       </div>
     );
   }

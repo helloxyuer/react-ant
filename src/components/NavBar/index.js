@@ -59,7 +59,7 @@ class Index extends React.Component {
         >
           { this.state.menuTreeNode }
         </Menu>
-        <Button type="primary" onClick={this.toggleCollapsed}>
+        <Button className='swithBtn' type="primary" onClick={this.toggleCollapsed}>
           <Icon type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}/>
         </Button>
       </div>
