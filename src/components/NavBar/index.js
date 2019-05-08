@@ -39,7 +39,7 @@ class Index extends React.Component {
             key="sub2">
             <Icon type="calendar"/>
             <span>
-              <NavLink to="/login">我的日历</NavLink>
+              <NavLink to="/options">我的日历</NavLink>
             </span>
           </Menu.Item>
           <SubMenu
