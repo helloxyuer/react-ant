@@ -10,7 +10,7 @@ class Index extends React.Component {
   state = {
     mode: 'inline',
     theme: 'light',
-    defaultselectedKeys:['/email'],
+    defaultselectedKeys:[],
     defaultopenKeys:['/home'],
     collapsed: false,
   }
@@ -23,8 +23,16 @@ class Index extends React.Component {
 
   componentWillMount(){
     const menuTreeNode = this.renderMenu(menuconfig);
+    let defaultselectedKeys = window.location.hash.replace(/#|\?.*$/g,'')
     this.setState({
+      defaultselectedKeys:[defaultselectedKeys],
       menuTreeNode
+    })
+  }
+
+  handleClick =(item)=>{
+    this.setState({
+      defaultselectedKeys:[item.key]
     })
   }
 
@@ -52,10 +60,10 @@ class Index extends React.Component {
       <div className='navBarBox'>
         <Menu
           defaultSelectedKeys={this.state.defaultselectedKeys}
-          defaultOpenKeys={this.state.defaultopenKeys}
           mode={this.state.mode}
           theme={this.state.theme}
           inlineCollapsed={this.state.collapsed}
+          onClick={this.handleClick}
         >
           { this.state.menuTreeNode }
         </Menu>
